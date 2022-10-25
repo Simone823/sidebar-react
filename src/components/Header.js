@@ -29,19 +29,19 @@ function Header() {
                 {/* social list */}
                 <ul className='social-list'>
                     <li>
-                        <a href='/'><i class="fab fa-twitter"></i></a>
+                        <a href='/'><i className="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                        <a href='/'><i class="fab fa-facebook"></i></a>
+                        <a href='/'><i className="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href='/'><i class="fab fa-linkedin-in"></i></a>
+                        <a href='/'><i className="fab fa-linkedin-in"></i></a>
                     </li>
                 </ul>
 
                 {/* btn hamburger menu */}
                 <button type='button' className='btn-menu'>
-                    <i class="fas fa-bars"></i>
+                    <i className="fas fa-bars"></i>
                 </button>
 
             </div>
