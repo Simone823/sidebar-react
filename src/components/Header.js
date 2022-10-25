@@ -1,53 +1,74 @@
-import React from 'react'
+import React, {useState, createContext} from 'react';
+
+// import sidebar
+import Sidebar from './Sidebar';
 
 function Header() {
-  return (
-    // header
-    <header>
-        <div className='container'>
-            <div className='wrapper'>
+    // isOpen menu
+    const [isOPenMenu, setIsOpenMenu] = useState(false);  
 
-                {/* brand */}
-                <a href='/' className='nav-brand'>NavBar</a>
+    // open menu
+    const openMenu = () => (e) => {
+        // set isOPenMenu true
+        setIsOpenMenu(true);
+    }
 
-                {/* links */}
-                <ul className='list-links-menu'>
-                    <li>
-                        <a href='/'>Home</a>
-                    </li>
-                    <li>
-                        <a href='/'>Chi Siamo</a>
-                    </li>
-                    <li>
-                        <a href='/'>Progetti</a>
-                    </li>
-                    <li>
-                        <a href='/'>Contattaci</a>
-                    </li>
-                </ul>
+    // close menu
+    const closeMenu = () => (e) => {
+        // set isOPenMenu false
+        setIsOpenMenu(false);
+    }
 
-                {/* social list */}
-                <ul className='social-list'>
-                    <li>
-                        <a href='/'><i className="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href='/'><i className="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href='/'><i className="fab fa-linkedin-in"></i></a>
-                    </li>
-                </ul>
+    return (
+        // header
+        <header>
+            <div className='container'>
+                <div className='wrapper'>
 
-                {/* btn hamburger menu */}
-                <button type='button' className='btn-menu'>
-                    <i className="fas fa-bars"></i>
-                </button>
+                    {/* brand */}
+                    <a href='/' className='nav-brand'>NavBar</a>
 
+                    {/* links */}
+                    <ul className='list-links-menu'>
+                        <li>
+                            <a href='/' className='nav-link'>Home</a>
+                        </li>
+                        <li>
+                            <a href='/' className='nav-link'>Chi Siamo</a>
+                        </li>
+                        <li>
+                            <a href='/' className='nav-link'>Progetti</a>
+                        </li>
+                        <li>
+                            <a href='/' className='nav-link'>Contattaci</a>
+                        </li>
+                    </ul>
+
+                    {/* social list */}
+                    <ul className='social-list'>
+                        <li>
+                            <a href='/'><i className="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href='/'><i className="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href='/'><i className="fab fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+
+                    {/* btn hamburger menu */}
+                    <button onClick={openMenu()} type='button' className='btn-menu'>
+                        <i className="fas fa-bars"></i>
+                    </button>
+
+                    {/* sidebar */}
+                    <Sidebar/>
+
+                </div>
             </div>
-        </div>
-    </header>
-  )
+        </header>
+    )
 }
 
 export default Header
